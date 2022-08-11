@@ -30,13 +30,13 @@ class LinkedList:
         """
         # Write code here
         new = Node(data, None)
-        curr = self.curr
-        if curr is None:
+        current = self.head
+        if current is None:
             self.head = new
         else:
-            while curr.next is not None:
-                curr = curr.next
-            curr.next = new
+            while current.next is not None:
+                current = current.next
+            current.next = new
         
 
     def status(self):
@@ -45,10 +45,10 @@ class LinkedList:
         """
         # write code here
         elements = []
-        curr = self.head
-        while curr:
-            elements.append(curr.data)
-            curr = curr.next
+        current = self.head
+        while current:
+            elements.append(current.data)
+            current = current.next
         print(elements)
         result = self.get_num(first_list) + self.get_num(second_list)
         sum_list = LinkedList()
@@ -68,13 +68,13 @@ class Solution:
         :return: returns the sum as a linked list
         """
         # Write code here
-        curr = l.head
-        if curr is None:
+        current = l.head
+        if current is None:
             return 0
         num = ""
-        while curr is not None:
+        while current is not None:
             num = str(curr.data) + num
-            curr = curr.next
+            current = current.next
         return int(num)
         
         
