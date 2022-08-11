@@ -68,16 +68,25 @@ class Solution:
         :return: returns the sum as a linked list
         """
         # Write code here
-        current = self.head
+        result = self.get_num(first_list) + self.get_num(second_list)
+        sum_list = LinkedList()
+        for digit in list(map(int, str(result)[::-1])):
+            sum_list.insert_at_end(digit)
+        return sum_list
+        
+    def get_num(self, l: Optional[LinkedList]) -> int:
+        """
+        :param l: LinkedList with non-negative integers
+        :return: returns digits of the list as a single integer
+        """
+        current = l.head
         if current is None:
             return 0
         num = ""
         while current is not None:
-            num = str(curr.data) + num
+            num = str(current.data) + num
             current = current.next
         return int(num)
-        
-        
 
 # Do not edit the following code      
 # Create an instance for LinkedList
