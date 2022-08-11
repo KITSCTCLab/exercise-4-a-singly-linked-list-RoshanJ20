@@ -68,7 +68,7 @@ class Solution:
         :return: returns the sum as a linked list
         """
         # Write code here
-        current = l.head
+        current = self.head
         if current is None:
             return 0
         num = ""
